@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'Widgets/Accueil.dart';
+import 'Widgets/Home.dart';
 
 //import 'Widgets/Naviguation.dart';
 import 'Widgets/Inscription.dart';

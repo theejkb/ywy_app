@@ -25,11 +25,13 @@ class LoginCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text("Connexion",
-                style: TextStyle(
-                    fontSize: ScreenUtil.getInstance().setSp(45),
-                    fontFamily: "Poppins-Bold",
-                    letterSpacing: .9)),
+            Text(
+              "Connexion",
+              style: TextStyle(
+                  fontSize: ScreenUtil.getInstance().setSp(45),
+                  fontFamily: "Poppins-Bold",
+                  letterSpacing: .9),
+            ),
             SizedBox(
               height: ScreenUtil.getInstance().setHeight(30),
             ),

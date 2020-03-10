@@ -1,5 +1,8 @@
+import 'package:YWYMobilier/Widgets/OffresWidget.dart';
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+import 'AccueilWidget.dart';
+
+import 'ProfilWidget.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,7 +14,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    HomePage(),
+    AccueilWidget(),
+    OffresWidget(),
+    ProfilWidget(),
 //    PlaceholderWidget(Colors.deepOrange),
 //    PlaceholderWidget(Colors.green)
   ];
