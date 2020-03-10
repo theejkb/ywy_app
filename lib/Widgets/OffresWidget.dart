@@ -38,7 +38,5 @@ class OffresWidget extends StatelessWidget {
         ],
       ),
     );
-
-
   }
 }
