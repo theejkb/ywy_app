@@ -1,3 +1,3 @@
 # YWYMobilier Mobile App
 
-A new Flutter App. Created by Florian BERROT & Me
+The mobile Application for the YWY Project.
