@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FormCard extends StatelessWidget {
+class LoginCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -23,10 +23,9 @@ class FormCard extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text("Connexion",
-                textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: ScreenUtil.getInstance().setSp(45),
                     fontFamily: "Poppins-Bold",
@@ -65,7 +64,7 @@ class FormCard extends StatelessWidget {
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
             ),
             SizedBox(
-              height: ScreenUtil.getInstance().setHeight(35),
+              height: ScreenUtil.getInstance().setHeight(15),
             ),
           ],
         ),

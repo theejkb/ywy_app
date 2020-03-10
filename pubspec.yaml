@@ -28,6 +28,7 @@ dependencies:
   flutter_screenutil: ^0.4.2
   icon_shadow: ^1.0.1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -48,6 +49,7 @@ flutter:
   assets:
    - assets/logo_blanc.png
    - assets/image_02.png
+   - assets/logo_blanc_shadow.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
