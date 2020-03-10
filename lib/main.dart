@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_page_ui/Widgets/Inscription.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'Widgets/Accueil.dart';
+
+//import 'Widgets/Naviguation.dart';
+import 'Widgets/Inscription.dart';
 import 'Widgets/LoginCard.dart';
 
 void main() => runApp(MaterialApp(
@@ -11,6 +14,7 @@ void main() => runApp(MaterialApp(
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => new _MyAppState();
+
 }
 
 class InscriptionPage extends StatelessWidget {
@@ -100,7 +104,13 @@ class InscriptionPage extends StatelessWidget {
                           child: Material(
                             color: Colors.transparent,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()),
+                                );
+                              },
                               child: Center(
                                 child: Text("S'INSCRIRE",
                                     style: TextStyle(
@@ -123,6 +133,66 @@ class InscriptionPage extends StatelessWidget {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
+
+  @override
+  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<HomePage> {
+  int _selectedIndex = 0;
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text("YWYMobilier",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: "Poppins-Bold", letterSpacing: .9)),
+    Text(
+      'Index 1: Business',
+    ),
+    Text(
+      'Index 2: School',
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
+    ScreenUtil.instance =
+        ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
+    return Scaffold(
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Accueil'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.art_track),
+            title: Text('Offres'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.perm_identity),
+            title: Text('Profil'),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blueAccent[800],
+        onTap: _onItemTapped,
       ),
     );
   }
@@ -252,7 +322,13 @@ class _MyAppState extends State<MyApp> {
                           child: Material(
                             color: Colors.transparent,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()),
+                                );
+                              },
                               child: Center(
                                 child: Text("SE CONNECTER",
                                     style: TextStyle(
