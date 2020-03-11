@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 import 'Widgets/Home.dart';
 
 //import 'Widgets/Naviguation.dart';
@@ -14,7 +15,6 @@ void main() => runApp(MaterialApp(
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => new _MyAppState();
-
 }
 
 class InscriptionPage extends StatelessWidget {
@@ -106,10 +106,11 @@ class InscriptionPage extends StatelessWidget {
                             child: InkWell(
                               onTap: () {
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Home()),
-                                );
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType
+                                            .rightToLeftWithFade,
+                                        child: Home()));
                               },
                               child: Center(
                                 child: Text("S'INSCRIRE",
@@ -324,10 +325,11 @@ class _MyAppState extends State<MyApp> {
                             child: InkWell(
                               onTap: () {
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Home()),
-                                );
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType
+                                            .rightToLeftWithFade,
+                                        child: Home()));
                               },
                               child: Center(
                                 child: Text("SE CONNECTER",
@@ -359,10 +361,11 @@ class _MyAppState extends State<MyApp> {
                       InkWell(
                         onTap: () {
                           Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => InscriptionPage()),
-                          );
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType
+                                      .upToDown,
+                                  child: InscriptionPage()));
                         },
                         child: Text("Inscris-toi",
                             style: TextStyle(

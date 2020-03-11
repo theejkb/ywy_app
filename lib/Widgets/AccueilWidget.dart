@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AccueilWidget extends StatelessWidget {
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
@@ -38,7 +43,7 @@ class AccueilWidget extends StatelessWidget {
             height: ScreenUtil.getInstance().setHeight(40),
           ),
           Text(
-            "Le but du projet YWYmobilier est de faciliter la vie des étudiants à la recherche de logement. Notre objectif est de regrouper de nombreuses demandes de particuliers cherchant des locataires sur la villede Lyon. Vous n'aurez plus qu'a naviguer dans l'onglet Offres, de récupérer les informations qui vous semblent importantes, de noter le numéro de téléphone du particulier et le tour est joué",
+            "Le but du projet YWYmobilier est de faciliter la vie des étudiants à la recherche de logement. Notre objectif est de regrouper de nombreuses demandes de particuliers cherchant des locataires sur la ville de Lyon. Vous n'aurez plus qu'a naviguer dans l'onglet Offres, de récupérer les informations qui vous semblent importantes, de noter le numéro de téléphone du particulier et le tour est joué",
             style: TextStyle(fontFamily: "Poppins-Medium"),
           ),
         ],

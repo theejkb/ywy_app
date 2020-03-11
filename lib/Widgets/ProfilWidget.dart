@@ -7,7 +7,7 @@ class ProfilWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
     ScreenUtil.instance =
-        ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
+        ScreenUtil(width: 700, height: 1334, allowFontScaling: true);
     return new Container(
       padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 50.0),
       margin: EdgeInsets.fromLTRB(10, 35, 10, 10),

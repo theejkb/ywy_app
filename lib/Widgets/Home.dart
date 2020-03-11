@@ -17,8 +17,6 @@ class _HomeState extends State<Home> {
     AccueilWidget(),
     OffresWidget(),
     ProfilWidget(),
-//    PlaceholderWidget(Colors.deepOrange),
-//    PlaceholderWidget(Colors.green)
   ];
   @override
   Widget build(BuildContext context) {
