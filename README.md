@@ -1,3 +1,3 @@
 # YWYMobilier Mobile App
 
-The mobile Application for the YWY Project.
+The mobile Application for the YWYMobilier Project.
