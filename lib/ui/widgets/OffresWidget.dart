@@ -1,12 +1,12 @@
 import 'package:YWYMobilier/ui/pages/offresDetailsPage.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:YWYMobilier/core/models/Property.dart';
 
 import '../../core/models/Property.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:YWYMobilier/core/models/Property.dart';
 
 class OffresWidget extends StatelessWidget {
   @override
@@ -16,7 +16,7 @@ class OffresWidget extends StatelessWidget {
     ScreenUtil.instance =
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
     return Container(
-      padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 50.0, bottom: 20),
+      padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 0.0, bottom: 15),
       margin: EdgeInsets.fromLTRB(10, 35, 10, 20),
       width: double.infinity,
       decoration: BoxDecoration(
@@ -32,50 +32,107 @@ class OffresWidget extends StatelessWidget {
                 offset: Offset(0.0, -10.0),
                 blurRadius: 10.0),
           ]),
-      child:ListView.builder(
+      child: ListView(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
-        itemBuilder: (context, index) {
-          return Center(
-            child: Card(
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType
-                              .rightToLeftWithFade,
-                          child: OffresDetailsPage(property: propertiesProvider[index])));
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+        children: <Widget>[
+          Align(
+            alignment: Alignment.center,
+            child: Text("Toutes les offres : ",
+                style: TextStyle(
+                  color: Colors.blueAccent,
+                  fontFamily: "Poppins-Bold",
+                  fontSize: 20,
+                )),
+          ),
+          SizedBox(
+            height: ScreenUtil.getInstance().setHeight(60),
+          ),
+          ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              if (propertiesProvider.length != null) {
+                return Hero(
+                  tag: propertiesProvider[index],
+                  child: Wrap(
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  child: OffresDetailsPage(
+                                      property: propertiesProvider[index])));
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          child: Wrap(children: <Widget>[
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(propertiesProvider[index].title,
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontFamily: "Poppins-Bold",
+                                      fontSize: 15)),
+                            ),
+                            SizedBox(
+                              height: ScreenUtil.getInstance().setHeight(50),
+                            ),
+                            ClipRRect(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.0)),
+                              child: Image.asset(
+                                "assets/lyon.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              height: 123,
+                            ),
+                            Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text(
+                                      propertiesProvider[index].rooms +
+                                          " pièces - " +
+                                          propertiesProvider[index].surface +
+                                          " m²",
+                                      style: TextStyle(
+                                          fontFamily: "Poppins-medium",
+                                          color: Colors.black87,
+                                          fontSize: 16)),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Text(
+                                        propertiesProvider[index].price +
+                                            "€/mois",
+                                        style: TextStyle(
+                                            color: Colors.blueAccent,
+                                            fontFamily: "Poppins-light",
+                                            fontSize: 15)),
+                                  ),
+                                ])
+                          ]),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 195,
+                      ),
+                    ],
                   ),
-                  height: 100,
-                  width: double.infinity,
-                  child: Text(
-                      propertiesProvider[index].title,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.blueAccent,
-                          fontFamily: "Poppins-Bold",
-                          fontSize: 15,
-                          letterSpacing: 1.0)
-                  ),
-
-//                      child: Image.asset(
-//                        "assets/lyon.jpg",
-//                      ),
-                ),
-              ),
-            ),
-          );
-        },
-        itemCount: propertiesProvider.length,
+                );
+              } else {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
+            itemCount: propertiesProvider.length,
+          ),
+        ],
       ),
-
     );
   }
 }
-
-
