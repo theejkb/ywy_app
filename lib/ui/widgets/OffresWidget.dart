@@ -32,105 +32,107 @@ class OffresWidget extends StatelessWidget {
                 offset: Offset(0.0, -10.0),
                 blurRadius: 10.0),
           ]),
-      child: ListView(
-        scrollDirection: Axis.vertical,
-        shrinkWrap: true,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.center,
-            child: Text("Toutes les offres : ",
-                style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontFamily: "Poppins-Bold",
-                  fontSize: 20,
-                )),
-          ),
-          SizedBox(
-            height: ScreenUtil.getInstance().setHeight(60),
-          ),
-          ListView.builder(
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              if (propertiesProvider.length != null) {
-                return Container(
-                  child: Wrap(
-                    children: <Widget>[
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              PageTransition(
-                                  type: PageTransitionType.fade,
-                                  child: OffresDetailsPage(
-                                      property: propertiesProvider[index])));
-                        },
-                        child: Container(
-                          width: double.infinity,
-                          child: Wrap(children: <Widget>[
-                            Align(
-                              alignment: Alignment.center,
-                              child: Text(propertiesProvider[index].title,
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontFamily: "Poppins-Bold",
-                                      fontSize: 15)),
-                            ),
-                            SizedBox(
-                              height: ScreenUtil.getInstance().setHeight(50),
-                            ),
-                            ClipRRect(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                              child: Image.asset(
-                                "assets/lyon.jpg",
+      child: Container(
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          children: <Widget>[
+            Align(
+              alignment: Alignment.center,
+              child: Text("Toutes les offres : ",
+                  style: TextStyle(
+                    color: Colors.blueAccent,
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 20,
+                  )),
+            ),
+            SizedBox(
+              height: ScreenUtil.getInstance().setHeight(60),
+            ),
+            ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                if (propertiesProvider.length != null) {
+                  return Container(
+                    child: Wrap(
+                      children: <Widget>[
+                        FlatButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.fade,
+                                    child: OffresDetailsPage(
+                                        property: propertiesProvider[index])));
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            child: Wrap(children: <Widget>[
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(propertiesProvider[index].title,
+                                    style: TextStyle(
+                                        color: Colors.black87,
+                                        fontFamily: "Poppins-Bold",
+                                        fontSize: 15)),
                               ),
-                            ),
-                            SizedBox(
-                              height: 123,
-                            ),
-                            Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Text(
-                                      propertiesProvider[index].rooms +
-                                          " pièces - " +
-                                          propertiesProvider[index].surface +
-                                          " m²",
-                                      style: TextStyle(
-                                          fontFamily: "Poppins-medium",
-                                          color: Colors.black87,
-                                          fontSize: 16)),
-                                  Align(
-                                    alignment: Alignment.centerRight,
-                                    child: Text(
-                                        propertiesProvider[index].price +
-                                            "€/mois",
+                              SizedBox(
+                                height: ScreenUtil.getInstance().setHeight(50),
+                              ),
+                              ClipRRect(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10.0)),
+                                child: Image.asset(
+                                  "assets/lyon.jpg",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 113,
+                              ),
+                              Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Text(
+                                        propertiesProvider[index].rooms +
+                                            " pièces - " +
+                                            propertiesProvider[index].surface +
+                                            " m²",
                                         style: TextStyle(
-                                            color: Colors.blueAccent,
-                                            fontFamily: "Poppins-light",
-                                            fontSize: 15)),
-                                  ),
-                                ])
-                          ]),
+                                            fontFamily: "Poppins-medium",
+                                            color: Colors.black87,
+                                            fontSize: 16)),
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: Text(
+                                          propertiesProvider[index].price +
+                                              "€/mois",
+                                          style: TextStyle(
+                                              color: Colors.blueAccent,
+                                              fontFamily: "Poppins-light",
+                                              fontSize: 15)),
+                                    ),
+                                  ])
+                            ]),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 195,
-                      ),
-                    ],
-                  ),
-                );
-              } else {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            },
-            itemCount: propertiesProvider.length,
-          ),
-        ],
+                        SizedBox(
+                          height: 191,
+                        ),
+                      ],
+                    ),
+                  );
+                } else {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+              itemCount: propertiesProvider.length,
+            ),
+          ],
+        ),
       ),
     );
   }
