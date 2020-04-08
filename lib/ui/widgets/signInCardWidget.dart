@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginCard extends StatelessWidget {
+class SignInCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -35,10 +35,6 @@ class LoginCard extends StatelessWidget {
             SizedBox(
               height: ScreenUtil.getInstance().setHeight(30),
             ),
-//            Text("Pseudo",
-//                style: TextStyle(
-//                    fontFamily: "Poppins-Medium",
-//                    fontSize: ScreenUtil.getInstance().setSp(26))),
             TextField(
               decoration: InputDecoration(
                   prefixIcon: const Icon(
@@ -51,10 +47,6 @@ class LoginCard extends StatelessWidget {
             SizedBox(
               height: ScreenUtil.getInstance().setHeight(30),
             ),
-//            Text("Mot de passe",
-//                style: TextStyle(
-//                    fontFamily: "Poppins-Medium",
-//                    fontSize: ScreenUtil.getInstance().setSp(26))),
             TextField(
               obscureText: true,
               decoration: InputDecoration(

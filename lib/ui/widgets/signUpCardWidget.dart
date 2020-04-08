@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class InscriptionCard extends StatelessWidget {
+class SignUpCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
       width: double.infinity,
-      height: ScreenUtil.getInstance().setHeight(1110),
+      height: ScreenUtil.getInstance().setHeight(1000),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.0),
@@ -107,24 +107,15 @@ class InscriptionCard extends StatelessWidget {
               title: const Text('Etudiant'),
               leading: Radio(
                 value: "etudiant",
-//                groupValue: _character,
-//                onChanged: (SingingCharacter value) {
-//                  setState(() { _character = value; });
-//                },
               ),
             ),
             ListTile(
               title: const Text('Propriétaire'),
               leading: Radio(
                value: "propriétaire",
-//                groupValue: _character,
-//                onChanged: (SingingCharacter value) {
-//                  setState(() { _character = value; });
-//                },
               ),
             ),
             //Espace entre les champs
-
           ],
         ),
       ),

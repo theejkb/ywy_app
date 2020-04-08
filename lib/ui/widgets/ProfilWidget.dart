@@ -10,7 +10,7 @@ class ProfilWidget extends StatelessWidget {
         ScreenUtil(width: 700, height: 1334, allowFontScaling: true);
     return new Container(
       padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 50.0),
-      margin: EdgeInsets.fromLTRB(10, 35, 10, 10),
+      margin: EdgeInsets.fromLTRB(10, 35, 10, 20),
       width: double.infinity,
       height: ScreenUtil.getInstance().setHeight(1200),
       decoration: BoxDecoration(
