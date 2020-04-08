@@ -38,9 +38,9 @@ class _HomePageState extends State<HomePage> {
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Colors.blueAccent,
           items: <Widget>[
-            Icon(Icons.home, size: 30),
-            Icon(Icons.art_track, size: 30),
-            Icon(Icons.perm_identity, size: 30),
+            Icon(Icons.home, size: 25),
+            Icon(Icons.art_track, size: 25),
+            Icon(Icons.account_circle, size: 25),
           ],
           onTap: onTabTapped
         ),
