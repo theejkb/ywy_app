@@ -144,7 +144,7 @@ class OffresDetailsPage extends StatelessWidget {
                     Text(
                       "Contacter le propriétaire",
                       style: TextStyle(
-                        fontSize: 17,
+                          fontSize: 17,
                           fontFamily: "Poppins-medium",
                           color: Colors.white),
                     ),

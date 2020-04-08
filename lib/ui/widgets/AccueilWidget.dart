@@ -46,7 +46,7 @@ class AccueilWidget extends StatelessWidget {
                 style: TextStyle(fontFamily: "Poppins-Medium"),
               ),
               SizedBox(
-                height: ScreenUtil.getInstance().setHeight(600),
+                height: ScreenUtil.getInstance().setHeight(100),
               ),
             ],
           ),
