@@ -6,7 +6,7 @@ class SignUpCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       width: double.infinity,
-      height: ScreenUtil.getInstance().setHeight(1000),
+      height: ScreenUtil.getInstance().setHeight(1150),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.0),
