@@ -7,9 +7,7 @@ class PropertiesService {
   Future<List<Property>> getJsonData() async {
     var response =
     await http.get("https://portfoliosteven.000webhostapp.com/api.php");
-    if(response.statusCode != 200){
-      print(response.statusCode.toString());
-    }
+
     if (response.statusCode == 200) {
       var jsonResponse = await jsonDecode(response.body)["properties"] as List;
       List<Property> propertiesList = jsonResponse.map((properties) =>
@@ -17,8 +15,9 @@ class PropertiesService {
       print(propertiesList);
       return propertiesList;
     } else {
+      List<Property> propertiesList;
       print("Request failed with status : ${response.statusCode}");
-      return Future.error(response.statusCode);
+      return propertiesList;
     }
 
   }
