@@ -53,8 +53,7 @@ class OffresWidget extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (context, index) {
               if (propertiesProvider.length != null) {
-                return Hero(
-                  tag: propertiesProvider[index],
+                return Container(
                   child: Wrap(
                     children: <Widget>[
                       InkWell(
@@ -62,7 +61,7 @@ class OffresWidget extends StatelessWidget {
                           Navigator.push(
                               context,
                               PageTransition(
-                                  type: PageTransitionType.rightToLeft,
+                                  type: PageTransitionType.fade,
                                   child: OffresDetailsPage(
                                       property: propertiesProvider[index])));
                         },

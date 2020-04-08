@@ -16,8 +16,7 @@ class OffresDetailsPage extends StatelessWidget {
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
     ScreenUtil.instance =
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
-    return Hero(
-      tag: property,
+    return Container(
       child: Material(
         type: MaterialType.transparency,
         child: Container(
@@ -144,7 +143,10 @@ class OffresDetailsPage extends StatelessWidget {
                     ),
                     Text(
                       "Contacter le propriétaire",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        fontSize: 17,
+                          fontFamily: "Poppins-medium",
+                          color: Colors.white),
                     ),
                   ],
                 ),
