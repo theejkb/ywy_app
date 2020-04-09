@@ -1,13 +1,9 @@
-import 'dart:convert';
 import 'dart:ui';
 import 'package:YWYMobilier/core/models/Property.dart';
-import 'package:YWYMobilier/core/models/User.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:YWYMobilier/ui/widgets/CaracteristiqueWidget.dart';
-import 'package:l10n/codegen.dart';
 
 class OffresDetailsPage extends StatelessWidget {
   final Property property;
@@ -195,19 +191,5 @@ class OffresDetailsPage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-User getUserById(userId) {
-  dynamic response = http.get(
-      "https://portfoliosteven.000webhostapp.com/apiUser.php?id=" + userId);
-  if (response.statusCode == 200) {
-    var user = User.fromJson(jsonDecode(response)['user']);
-    print(user);
-    return user;
-  } else {
-    User usersList;
-    print("Request failed with status : ${response.statusCode}");
-    return usersList;
   }
 }

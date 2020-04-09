@@ -1,8 +1,4 @@
-import 'dart:convert';
-import 'package:YWYMobilier/core/services/userService.dart';
-import 'package:http/http.dart' as http;
 
-import 'package:YWYMobilier/core/models/User.dart';
 import 'package:YWYMobilier/ui/pages/offresDetailsPage.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';

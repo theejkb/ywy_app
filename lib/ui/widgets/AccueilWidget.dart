@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import 'package:YWYMobilier/core/models/Property.dart';
 
 class AccueilWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var propertiesProvider = Provider.of<List<Property>>(context);
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
     ScreenUtil.instance =
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
