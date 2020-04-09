@@ -1,3 +1,8 @@
+import 'dart:convert';
+import 'package:YWYMobilier/core/services/userService.dart';
+import 'package:http/http.dart' as http;
+
+import 'package:YWYMobilier/core/models/User.dart';
 import 'package:YWYMobilier/ui/pages/offresDetailsPage.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -9,12 +14,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OffresWidget extends StatelessWidget {
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     var propertiesProvider = Provider.of<List<Property>>(context);
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
     ScreenUtil.instance =
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
+
+
     return Container(
       padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 0.0, bottom: 15),
       margin: EdgeInsets.fromLTRB(10, 35, 10, 20),
@@ -54,74 +66,74 @@ class OffresWidget extends StatelessWidget {
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 if (propertiesProvider.length != null) {
-                  return Container(
-                    child: Wrap(
-                      children: <Widget>[
-                        FlatButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    type: PageTransitionType.fade,
-                                    child: OffresDetailsPage(
-                                        property: propertiesProvider[index])));
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            child: Wrap(children: <Widget>[
-                              Align(
-                                alignment: Alignment.center,
-                                child: Text(propertiesProvider[index].title,
-                                    style: TextStyle(
-                                        color: Colors.black87,
-                                        fontFamily: "Poppins-Bold",
-                                        fontSize: 15)),
-                              ),
-                              SizedBox(
-                                height: ScreenUtil.getInstance().setHeight(50),
-                              ),
-                              ClipRRect(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10.0)),
-                                child: Image.asset(
-                                  "assets/lyon.jpg",
+                return Container(
+                      child: Wrap(
+                        children: <Widget>[
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  PageTransition(
+                                      type: PageTransitionType.fade,
+                                      child: OffresDetailsPage(
+                                          property: propertiesProvider[index])));
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              child: Wrap(children: <Widget>[
+                                Align(
+                                  alignment: Alignment.center,
+                                  child: Text(propertiesProvider[index].title,
+                                      style: TextStyle(
+                                          color: Colors.black87,
+                                          fontFamily: "Poppins-Bold",
+                                          fontSize: 15)),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 113,
-                              ),
-                              Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Text(
-                                        propertiesProvider[index].rooms +
-                                            " pièces - " +
-                                            propertiesProvider[index].surface +
-                                            " m²",
-                                        style: TextStyle(
-                                            fontFamily: "Poppins-medium",
-                                            color: Colors.black87,
-                                            fontSize: 16)),
-                                    Align(
-                                      alignment: Alignment.centerRight,
-                                      child: Text(
-                                          propertiesProvider[index].price +
-                                              "€/mois",
+                                SizedBox(
+                                  height: ScreenUtil.getInstance().setHeight(50),
+                                ),
+                                ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0)),
+                                  child: Image.asset(
+                                    "assets/lyon.jpg",
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 113,
+                                ),
+                                Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Text(
+                                          propertiesProvider[index].rooms +
+                                              " pièces - " +
+                                              propertiesProvider[index].surface +
+                                              " m²",
                                           style: TextStyle(
-                                              color: Colors.blueAccent,
-                                              fontFamily: "Poppins-light",
-                                              fontSize: 15)),
-                                    ),
-                                  ])
-                            ]),
+                                              fontFamily: "Poppins-medium",
+                                              color: Colors.black87,
+                                              fontSize: 16)),
+                                      Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Text(
+                                            propertiesProvider[index].price +
+                                                "€/mois",
+                                            style: TextStyle(
+                                                color: Colors.blueAccent,
+                                                fontFamily: "Poppins-light",
+                                                fontSize: 15)),
+                                      ),
+                                    ])
+                              ]),
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 191,
-                        ),
-                      ],
-                    ),
+                          SizedBox(
+                            height: 191,
+                          ),
+                        ],
+                      ),
                   );
                 } else {
                   return Center(
