@@ -22,13 +22,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  archive:
-    dependency: transitive
-    description:
-      name: archive
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.13"
   args:
     dependency: transitive
     description:
@@ -43,13 +36,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.1"
-  auto_size_text:
-    dependency: transitive
-    description:
-      name: auto_size_text
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
   bottom_navy_bar:
     dependency: "direct main"
     description:
@@ -139,13 +125,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_beautiful_popup:
-    dependency: "direct main"
-    description:
-      name: flutter_beautiful_popup
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.5.0"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -200,13 +179,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  image:
-    dependency: transitive
-    description:
-      name: image
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.12"
   intl:
     dependency: transitive
     description:
@@ -249,6 +221,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
+  mobile_popup:
+    dependency: "direct main"
+    description:
+      name: mobile_popup
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   node_interop:
     dependency: transitive
     description:
@@ -464,13 +443,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.4.0"
-  xml:
-    dependency: transitive
-    description:
-      name: xml
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.7.0"
   yaml:
     dependency: transitive
     description:
