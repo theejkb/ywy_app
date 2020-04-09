@@ -6,7 +6,7 @@ class PropertiesService {
 
   Future<List<Property>> getJsonData() async {
     var response =
-    await http.get("https://portfoliosteven.000webhostapp.com/api.php");
+    await http.get("https://stevencopy.yj.fr/api.php");
 
     if (response.statusCode == 200) {
       var jsonResponse = await jsonDecode(response.body)["properties"] as List;
