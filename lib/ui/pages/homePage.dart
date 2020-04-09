@@ -1,5 +1,6 @@
 
 import 'package:YWYMobilier/core/models/Property.dart';
+import 'package:YWYMobilier/core/models/User.dart';
 import 'package:YWYMobilier/core/services/propertiesService.dart';
 import 'package:YWYMobilier/ui/widgets/OffresWidget.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -20,6 +21,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   var properties = List<Property>();
+  var users = List<User>();
 
   final List<Widget> _children = [
     AccueilWidget(),
