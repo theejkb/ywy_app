@@ -1,15 +1,30 @@
+import 'dart:convert';
 import 'dart:ui';
-
 import 'package:YWYMobilier/core/models/Property.dart';
+import 'package:YWYMobilier/core/models/User.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:YWYMobilier/ui/widgets/CaracteristiqueWidget.dart';
+import 'package:l10n/codegen.dart';
 
 class OffresDetailsPage extends StatelessWidget {
   final Property property;
 
   OffresDetailsPage({Key key, @required this.property}) : super(key: key);
+
+  popup(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return StatefulBuilder(
+            builder: (context, sett) {
+              return Container();
+            },
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +118,8 @@ class OffresDetailsPage extends StatelessWidget {
                     property.city,
               ),
               CustomFormInput(
-                label: "Surface habitable", // Simple chaîne de caractères
+                label: "Surface habitable",
+                // Simple chaîne de caractères
                 value: property.surface + " m²",
               ),
               CustomFormInput(
@@ -150,7 +166,26 @@ class OffresDetailsPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      // ignore: missing_return
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          title: Text("Informations sur le propriétaire"),
+                          content: Text("Nom Prénom"),
+                          actions: <Widget>[
+                            FlatButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: Text("Fermer"),
+                            )
+                          ],
+                        );
+                      });
+                },
               ),
               SizedBox(
                 height: ScreenUtil.getInstance().setHeight(50),
@@ -160,5 +195,19 @@ class OffresDetailsPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+User getUserById(userId) {
+  dynamic response = http.get(
+      "https://portfoliosteven.000webhostapp.com/apiUser.php?id=" + userId);
+  if (response.statusCode == 200) {
+    var user = User.fromJson(jsonDecode(response)['user']);
+    print(user);
+    return user;
+  } else {
+    User usersList;
+    print("Request failed with status : ${response.statusCode}");
+    return usersList;
   }
 }
