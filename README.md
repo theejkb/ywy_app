@@ -2,9 +2,9 @@
 
 Une application mobile du site YWYMobilier, disponible à destination DES ETUDIANTS seulement, qui peuvent regarder quand ils souhaitent les nouvelles annonces plus rapidement.
 
-# Technologies Utilisées
+## Technologies Utilisées
 
-Le framework : [Flutter](https://flutter.dev/)
+Le framework : [Flutter](https://flutter.dev/)   
 Le language : [Dart](https://dart.dev/)
 
 # Détails de l'application
