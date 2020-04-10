@@ -10,6 +10,8 @@ Le language : [Dart](https://dart.dev/)
 ## Fonctionnalités précises 
 
 L'application mobile YWYMobilier récupère les données existante sur le site en ligne pour les afficher sur son application. 
+- Affichage des données des offres.
+- Affichage des données du propriétaire (bientôt)
 
 ##  Pour tester l'application 
 
