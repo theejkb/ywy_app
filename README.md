@@ -15,7 +15,7 @@ L'application mobile YWYMobilier récupère les données existante sur le site e
 
 La page de connexion/inscription ne servent à rien (au back derrière).
 Appuyer sur le bouton SE CONNECTER pour accéder à l'application.
-Vous pouvez naviguez via le menu en bas de l'écran et vous dirigez vers Offres pour consultez nos offres.
+Vous pouvez naviguez via le menu en bas de l'écran et vous dirigez vers le logo des offres (celui du milieu) pour consulter nos offres.
 
 <img src="Home.png" alt="Page de connexion" width="300"/><img src="Accueil.png" alt="Page d'accueil" width="300"/><img src="Offres.png" alt="Page des offres" width="300"/><img src="OffresDetails.png" alt="Détails d'une offre" width="300"/>
 
