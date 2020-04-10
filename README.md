@@ -13,7 +13,8 @@ L'application mobile YWYMobilier récupère les données existante sur le site e
 
 ##  Pour tester l'application 
 
-La page de connexion/inscription ne servent à rien (au back derrière).
+La page de connexion/inscription ne servent à rien (il n'y a pas de back-office derrière).  
+
 Appuyer sur le bouton SE CONNECTER pour accéder à l'application.
 Vous pouvez naviguez via le menu en bas de l'écran et vous dirigez vers le logo des offres (celui du milieu) pour consulter nos offres.
 
