@@ -11,4 +11,4 @@ Le language : [Dart](https://dart.dev/)
 La page de connexion/inscription ne servent à rien (au back derrière).
 Appuyer sur le bouton SE CONNECTER pour accéder à l'application
 
-![Screenshot](Home.png)
+![Screenshot](Home.png =200x)
